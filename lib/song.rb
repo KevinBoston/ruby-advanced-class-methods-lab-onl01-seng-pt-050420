@@ -14,18 +14,21 @@ class Song
     song.save
     song
   end
-  def self.new_by_name(name)
+  def self.new_by_name(s_name)
     song.new 
-    song.name = name 
+    song.name = s_name 
     song 
   end
-  def self.create_by_name(name)
+  def self.create_by_name(s_name)
     song = self.create
-    song.name = name
+    song.name = s_name
     song 
   end
-  def self.find_by_name(name)
+  def self.find_by_name(s_name)
+    self.all.detect{|s| s.name == s_name}
   end
+  self.find_or_create_by_name(s_name)
+    
   def self.alphabetical
     @@all.sort
   end
