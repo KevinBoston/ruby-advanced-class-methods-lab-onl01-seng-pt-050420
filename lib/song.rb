@@ -28,7 +28,8 @@ class Song
     self.all.detect{|s| s.name == s_name}
   end
   self.find_or_create_by_name(s_name)
-    
+    self.find_by_name(s_name) || self.create_by_name(s_name)
+  end
   def self.alphabetical
     @@all.sort
   end
