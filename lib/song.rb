@@ -9,5 +9,8 @@ class Song
   def save
     self.class.all << self
   end
+  def self.alphabetical
+    @@all.sort_by
+  end
 
 end
