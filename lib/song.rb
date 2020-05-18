@@ -10,7 +10,7 @@ class Song
     self.class.all << self
   end
   def self.alphabetical
-    @@all.sort_by
+    @@all.sort
   end
 
 end
